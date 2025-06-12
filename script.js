@@ -39,10 +39,8 @@ function reverseOrder() {}
 
 /* Task 6 - Complete the function according to the TODO */
 function removeComment(index) {
-  if(index >= 0 && index < comments.length) {
     comments.splice(index, 1);
   }
-}
 
 /* Task 7 - Complete the function according to the TODO */
 function filterEmojiComments() {}
