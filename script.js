@@ -1,9 +1,35 @@
 /* Task 1 - Complete the function according to the TODO */
-function addComment(username, comment, addToStart) {}
+function addComment(username, comment, addToStart) {
+  const combinedComment = `${username}: ${comment}`
+
+  if(addToStart) {
+    comments.unshift(combinedComment);
+    
+  }else{
+    comments.push(combinedComment);
+  }
+}
 
 /* Task 2 - Create your showWinnerMessage below according to the TODO */
+function showWinnerMessage(message){
+  const winnerDisplay = document.getElementById("winner-display");
+  winnerDisplay.innerHTML = message;
+}
 
 /* Task 3 - Create your pickWinner below according to the TODO */
+function pickWinner(){
+if (comments.length === 0) {
+    // Show a message if there are no comments
+    showWinnerMessage("No comments to pick from!");
+    return;
+  }
+  // Pick a random index from the comments array
+  const randomIndex = Math.floor(Math.random() * comments.length);
+  // Get the comment at the random index
+  const winnerComment = comments[randomIndex];
+  // Call showWinnerMessage with the winner comment
+  showWinnerMessage(winnerComment);
+}
 
 /* Task 4 - Complete the function according to the TODO */
 function showRandomEmoji() {}
@@ -12,7 +38,11 @@ function showRandomEmoji() {}
 function reverseOrder() {}
 
 /* Task 6 - Complete the function according to the TODO */
-function removeComment(index) {}
+function removeComment(index) {
+  if(index >= 0 && index < comments.length) {
+    comments.splice(index, 1);
+  }
+}
 
 /* Task 7 - Complete the function according to the TODO */
 function filterEmojiComments() {}
